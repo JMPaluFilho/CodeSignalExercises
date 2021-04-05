@@ -67,37 +67,20 @@ public class Intro23 {
     private static int[][] boxBlur(int[][] image) {
 
         int qtdHorizontalX = image.length - 2;
-        int qtdVerticalX;
-        int[][] blurImage;
+        int qtdVerticalX = image[0].length - 2;
+        int[][] blurImage = new int[qtdHorizontalX][qtdVerticalX];
+        int countX = 0, countY = 0, distorted;
 
-        if (image[0].length > 3) {
-            qtdVerticalX = image[0].length - 2;
-            blurImage = new int[qtdHorizontalX][qtdVerticalX];
-            int countX = 0;
-            int countY = 0;
-
-            while (countX < qtdHorizontalX) {
-                while (countY < qtdVerticalX) {
-                    int distorted = (image[countX][countY] + image[countX][countY + 1] + image[countX][countY + 2] +
-                            image[countX + 1][countY] + image[countX + 1][countY + 1] + image[countX + 1][countY + 2] +
-                            image[countX + 2][countY] + image[countX + 2][countY + 1] + image[countX + 2][countY + 2]) / 9;
-                    blurImage[countX][countY] = distorted;
-                    countY++;
-                }
-                countX++;
-                countY = 0;
+        while (countX < qtdHorizontalX) {
+            while (countY < qtdVerticalX) {
+                distorted = (image[countX][countY] + image[countX][countY + 1] + image[countX][countY + 2] +
+                        image[countX + 1][countY] + image[countX + 1][countY + 1] + image[countX + 1][countY + 2] +
+                        image[countX + 2][countY] + image[countX + 2][countY + 1] + image[countX + 2][countY + 2]) / 9;
+                blurImage[countX][countY] = distorted;
+                countY++;
             }
-        } else {
-            blurImage = new int[qtdHorizontalX][1];
-            int count = 0;
-
-            while (count < qtdHorizontalX) {
-                int distorted = (image[count][0] + image[count][1] + image[count][2] +
-                        image[count + 1][0] + image[count + 1][1] + image[count + 1][2] +
-                        image[count + 2][0] + image[count + 2][1] + image[count + 2][2]) / 9;
-                blurImage[count][0] = distorted;
-                count++;
-            }
+            countX++;
+            countY = 0;
         }
 
         return blurImage;
