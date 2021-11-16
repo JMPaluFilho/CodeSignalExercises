@@ -1,6 +1,9 @@
 package arcade.intro;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class Intro18 {
 
@@ -39,28 +42,16 @@ public class Intro18 {
     }
 
     public static boolean palindromeRearranging(String inputString) {
+        Set<Character> chars = new HashSet<>();
 
-        int[] t = new int[inputString.length()];
-        int c = 0, c2 = 0;
-        ArrayList<Character> list = new ArrayList<>();
-
-        for (int i = 0; i < inputString.length(); i++) {
-            list.add(inputString.toCharArray()[i]);
-
-            if (list.contains(inputString.toCharArray()[i])) {
-                t[inputString.indexOf(inputString.toCharArray()[i])]++;
+        for (int i = 0; i < inputString.length(); ++i) {
+            char c = inputString.charAt(i);
+            if (chars.contains(c)) {
+                chars.remove(c);
+            } else {
+                chars.add(c);
             }
         }
-
-        for (int j : t) {
-
-            if (j % 2 == 1) {
-                c++;
-            } else if (j % 2 == 0 && j != 0) {
-                c2++;
-            }
-        }
-
-        return c <= 1 || c <= c2;
+        return chars.size() <= 1;
     }
 }
