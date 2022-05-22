@@ -39,8 +39,7 @@ public class Dropbox01 {
     public static void main(String[] args) {
 
         String senha = "1234";
-        String[] tentativas = {"9999", "9999", "9999", "9999", "9999", "9999", "9999", "9999", "9999", "1234",
-                "9999"};
+        String[] tentativas = {"9999", "9999", "9999", "9999", "9999", "9999", "9999", "9999", "9999", "1234", "9999"};
         System.out.println("Está bloqueado? " + incorrectPasscodeAttempts(senha, tentativas));
 
     }

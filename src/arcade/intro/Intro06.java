@@ -46,7 +46,7 @@ public class Intro06 {
         int min = statues[0];
         int max = statues[0];
 
-        for (int i=1; i<statues.length; ++i) {
+        for (int i = 1; i < statues.length; ++i) {
             min = Math.min(min, statues[i]);
             max = Math.max(max, statues[i]);
         }

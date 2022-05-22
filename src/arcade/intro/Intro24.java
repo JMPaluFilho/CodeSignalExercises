@@ -55,16 +55,16 @@ public class Intro24 {
             for (int j = 0; j < matrix[0].length; j++) {
                 int addNeighbors = 0;
 
-                if (i > 0 && j > 0 && matrix[i-1][j-1]) addNeighbors++;
-                if (i > 0 && matrix[i-1][j]) addNeighbors++;
-                if (i > 0 && j+1 < matrix[0].length && matrix[i-1][j+1]) addNeighbors++;
+                if (i > 0 && j > 0 && matrix[i - 1][j - 1]) addNeighbors++;
+                if (i > 0 && matrix[i - 1][j]) addNeighbors++;
+                if (i > 0 && j + 1 < matrix[0].length && matrix[i - 1][j + 1]) addNeighbors++;
 
-                if (j > 0 && matrix[i][j-1]) addNeighbors++;
-                if (j+1 < matrix[0].length && matrix[i][j+1]) addNeighbors++;
+                if (j > 0 && matrix[i][j - 1]) addNeighbors++;
+                if (j + 1 < matrix[0].length && matrix[i][j + 1]) addNeighbors++;
 
-                if (i+1 < matrix.length && j > 0 && matrix[i+1][j-1]) addNeighbors++;
-                if (i+1 < matrix.length && matrix[i+1][j]) addNeighbors++;
-                if (i+1 < matrix.length && j+1 < matrix[0].length && matrix[i+1][j+1]) addNeighbors++;
+                if (i + 1 < matrix.length && j > 0 && matrix[i + 1][j - 1]) addNeighbors++;
+                if (i + 1 < matrix.length && matrix[i + 1][j]) addNeighbors++;
+                if (i + 1 < matrix.length && j + 1 < matrix[0].length && matrix[i + 1][j + 1]) addNeighbors++;
 
                 numberOfNeighborsMines[i][j] = addNeighbors;
             }

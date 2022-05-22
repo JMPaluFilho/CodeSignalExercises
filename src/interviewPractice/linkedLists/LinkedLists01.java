@@ -39,14 +39,14 @@ public class LinkedLists01 {
      */
 
     public static void main(String[] args) {
-        ListNode node = new ListNode(3);
-        node.next = new ListNode(1);
-        node.next.next = new ListNode(2);
-        node.next.next.next = new ListNode(3);
-        node.next.next.next.next = new ListNode(4);
-        node.next.next.next.next.next = new ListNode(5);
+        ListNode<Integer> node = new ListNode<>(3);
+        node.next = new ListNode<>(1);
+        node.next.next = new ListNode<>(2);
+        node.next.next.next = new ListNode<>(3);
+        node.next.next.next.next = new ListNode<>(4);
+        node.next.next.next.next.next = new ListNode<>(5);
 
-        ListNode removedNodes = solution(node, 3);
+        ListNode<Integer> removedNodes = solution(node, 3);
 
         while (removedNodes != null) {
             System.out.println(removedNodes.value);
